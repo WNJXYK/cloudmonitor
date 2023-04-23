@@ -15,7 +15,6 @@ dist/
 *.hd5
 *.csv
 *.out
-*.html
 *.dot
 *.xml
 *.log
