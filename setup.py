@@ -32,7 +32,9 @@ if os.path.exists("MANIFEST"):
 # What packages are required for this module to be executed?
 # `estimator` may depend on other packages. In order to reduce dependencies, it is not written here.
 REQUIRED = [
-    "flask>=2.2.2"
+    "flask>=2.2.2",
+    "paramiko>=3.0.0",
+    "pyyaml>=6.0",
 ]
 
 here = os.path.abspath(os.path.dirname(__file__))
@@ -67,8 +69,8 @@ if __name__ == "__main__":
             "Programming Language :: Python :: 3.8",
         ],
         entry_points={
-            'console_scripts': [
-                'cloud-monitor = cloudmonitor:main',
+            "console_scripts": [
+                "cloud-monitor = cloudmonitor:main",
             ]
-        }
+        },
     )
