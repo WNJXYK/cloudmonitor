@@ -1,5 +1,10 @@
 import os
 import copy
+import yaml
+import logging
+
+__all__ = ["C", "load_config", "load_args"]
+
 
 class Config:
     def __init__(self, default_conf):
@@ -45,18 +50,48 @@ class Config:
     def update(self, *args, **kwargs):
         self.__dict__["_config"].update(*args, **kwargs)
 
+
+def load_config(path):
+    try:
+        with open(path, "r", encoding="utf-8") as fr:
+            config = yaml.load(fr, yaml.FullLoader)
+            # Apply config files to config
+            C.servers = config["servers"]
+            if "refresh" in config:
+                C.refresh = float(config["refresh"])
+            if "workers" in config:
+                C.workers = int(config["workers"])
+            if "port" in config:
+                C.port = int(config["port"])
+
+        # Set default key-value in config
+        for server_name in C.servers:
+            if "port" not in C.servers[server_name]:
+                C.servers[server_name]["port"] = 22
+            if "rank" not in C.servers[server_name]:
+                C.servers[server_name]["rank"] = 999
+            if "path" not in C.servers[server_name]:
+                C.servers[server_name]["path"] = ["/"]
+    except Exception as err:
+        logging.error(f"[CONFIG] Load config error: {err}.")
+        return False
+    return True
+
+
+def load_args(args):
+    C.workers = args.workers
+    C.port = args.port
+
+
 ROOT_DIRPATH = os.path.dirname(os.path.abspath(__file__))
 
 _DEFAULT_CONFIG = {
     "root_path": ROOT_DIRPATH,
     "servers": {},
-    # For GPU
-    "gpus": {},
-    "gpu_last": 0, 
-    "gpu_refresh": 10,
-    # For CPU
-    "cpus": {},
-    "storages": {},
+    "refresh": 60,
+    "status": {},
+    "workers": 4,
+    "port": 8899,
 }
 
 C = Config(_DEFAULT_CONFIG)
