@@ -47,7 +47,7 @@ if __name__ == "__main__":
         name=NAME,
         version=VERSION,
         license="MIT Licence",
-        # url="https://git.nju.edu.cn/learnware/learnware-market",
+        url="https://github.com/WNJXYK/cloudmonitor",
         packages=find_packages(),
         include_package_data=True,
         description=DESCRIPTION,
@@ -69,8 +69,9 @@ if __name__ == "__main__":
             "Programming Language :: Python :: 3.8",
         ],
         entry_points={
-            "console_scripts": [
-                "cloud-monitor = cloudmonitor:main",
+            'console_scripts': [
+                'cloudmonitor  = cloudmonitor:main',
+                'cloud-monitor = cloudmonitor:main',
             ]
-        },
+        }
     )

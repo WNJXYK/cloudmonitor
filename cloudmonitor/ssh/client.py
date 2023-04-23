@@ -4,7 +4,7 @@ __all__ = ["exec_command", "exec_commands"]
 
 
 def exec_command(server_config, command):
-    with SSHClient() as p:
+    with paramiko.SSHClient() as p:
         p.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         p.connect(
             server_config["host"],
