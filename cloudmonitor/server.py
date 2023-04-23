@@ -48,7 +48,7 @@ def cache(seconds: int, maxsize: int = 128, typed: bool = False):
 @app.route("/")
 def hello_world():
     status()
-    return render_template(os.path.join(C.root_path, "index.html"), servers=C.status)
+    return render_template("index.html", servers=C.status)
 
 
 @app.route("/reload")
