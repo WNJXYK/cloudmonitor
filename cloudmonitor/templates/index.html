@@ -14,7 +14,7 @@
             </div>
         </nav>
         <br>
-        <div class="container-fluid" style="padding-top: 52px">
+        <div class="container" style="padding-top: 52px">
             {% for server in servers %}
             {% if server['CONNECT'] == true%}
                 <h4 class="alert alert-success" id="{{server['NAME']}}" role="alert"> {{server['NAME']}} </h4>
