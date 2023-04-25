@@ -32,9 +32,10 @@ if os.path.exists("MANIFEST"):
 # What packages are required for this module to be executed?
 # `estimator` may depend on other packages. In order to reduce dependencies, it is not written here.
 REQUIRED = [
-    "flask>=2.2.2",
+    "flask>=2.0.0",
     "paramiko>=3.0.0",
     "pyyaml>=6.0",
+    "gevent>=22.10.2",
 ]
 
 here = os.path.abspath(os.path.dirname(__file__))
@@ -50,6 +51,10 @@ if __name__ == "__main__":
         url="https://github.com/WNJXYK/cloudmonitor",
         packages=find_packages(),
         include_package_data=True,
+        # package_dir={"": "cloudmonitor"},
+        # package_data={"cloudmonitor.templates": ["*.html"]},
+        author="Zhi Zhou",
+        author_email="wnjxyk@gmail.com",
         description=DESCRIPTION,
         long_description=long_description,
         long_description_content_type="text/markdown",

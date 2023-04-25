@@ -84,9 +84,11 @@ def load_args(args):
 
 
 ROOT_DIRPATH = os.path.dirname(os.path.abspath(__file__))
+TEMPLATE_PATH = os.path.join(os.path.expanduser('~'), "templates")
 
 _DEFAULT_CONFIG = {
     "root_path": ROOT_DIRPATH,
+    "template_path": TEMPLATE_PATH,
     "servers": {},
     "refresh": 60,
     "status": {},

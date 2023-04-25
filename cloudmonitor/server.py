@@ -5,12 +5,18 @@ import logging
 import functools
 from datetime import datetime, timedelta
 from flask import Flask, render_template, jsonify
+from gevent import pywsgi
 from .config import C, load_config, load_args
 from .status import update_servers
 
+
 __all__ = ["main"]
 
-app = Flask(__name__)
+app = Flask(
+    __name__,
+    template_folder=os.path.join(C.root_path, "templates")
+)
+
 parser = argparse.ArgumentParser(
     prog="Cloud Monitor",
     description="A Web-GUI for monitoring servers",
@@ -66,7 +72,13 @@ def status():
 
 
 def main():
-    app.run(host="0.0.0.0", port=C.port, debug=True)
+    # app.run(
+    #     host="0.0.0.0", 
+    #     port=C.port, 
+    #     debug=True
+    # )
+    server = pywsgi.WSGIServer(('0.0.0.0', C.port), app)
+    server.serve_forever()
 
 
 if __name__ == "__main__":
