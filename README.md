@@ -1,7 +1,11 @@
 # Cloud Monitor
-![pypi](https://badgen.net/pypi/v/cloudmonitor)
-![visitors](https://visitor-badge.glitch.me/badge?page_id=WNJXYK.cloudmonitor)
-[![Downloads](https://pepy.tech/badge/cloudmonitor)](https://pepy.tech/project/cloudmonitor)
+
+<p align="center">
+    <a href="https://pypi.org/project/cloudmonitor/"><img src="https://badgen.net/pypi/v/cloudmonitor"></a>
+    <a href="#"><img src="https://visitor-badge.glitch.me/badge?page_id=WNJXYK.cloudmonitor"></a>
+    <a href="https://pepy.tech/project/cloudmonitor"><img src="https://pepy.tech/badge/cloudmonitor"></a>
+    <a href="#"><img src="https://img.shields.io/github/last-commit/WNJXYK/cloudmonitor"></a>
+</p>
 
 ## Navigation
 
