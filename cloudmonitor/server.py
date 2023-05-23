@@ -19,8 +19,8 @@ app = Flask(
 
 parser = argparse.ArgumentParser(
     prog="Cloud Monitor",
-    description="A Web-GUI for monitoring servers",
-    # epilog='Text at the bottom of help'
+    description='''A Web-GUI for monitoring servers''',
+    epilog='''Pypi Homepage: https://pypi.org/project/cloudmonitor/'''
 )
 parser.add_argument("-c", "--config", dest="config", required=True, type=str, help="path of YAML config file")
 parser.add_argument("-p", "--port", dest="port", required=False, default=8899, type=int, help="port for Web GUI")
@@ -52,7 +52,7 @@ def cache(seconds: int, maxsize: int = 128, typed: bool = False):
 
 
 @app.route("/")
-def hello_world():
+def index():
     status()
     return render_template("index.html", servers=C.status, refresh=C.refresh)
 
@@ -72,14 +72,7 @@ def status():
 
 
 def main():
-    # app.run(
-    #     host="0.0.0.0", 
-    #     port=C.port, 
-    #     debug=True
-    # )
     server = pywsgi.WSGIServer(('0.0.0.0', C.port), app)
     server.serve_forever()
 
-
-if __name__ == "__main__":
-    main()
+if __name__ == "__main__": main()

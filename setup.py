@@ -39,7 +39,7 @@ REQUIRED = [
 ]
 
 here = os.path.abspath(os.path.dirname(__file__))
-with open(os.path.join(here, "README.md"), encoding="utf-8") as f:
+with open(os.path.join(here, "PACKAGE.md"), encoding="utf-8") as f:
     long_description = f.read()
 
 
@@ -51,8 +51,6 @@ if __name__ == "__main__":
         url="https://github.com/WNJXYK/cloudmonitor",
         packages=find_packages(),
         include_package_data=True,
-        # package_dir={"": "cloudmonitor"},
-        # package_data={"cloudmonitor.templates": ["*.html"]},
         author="Zhi Zhou",
         author_email="wnjxyk@gmail.com",
         description=DESCRIPTION,

@@ -3,13 +3,6 @@
 ![visitors](https://visitor-badge.glitch.me/badge?page_id=WNJXYK.cloudmonitor)
 [![Downloads](https://pepy.tech/badge/cloudmonitor)](https://pepy.tech/project/cloudmonitor)
 
-## Navigation
-
-| Navigation |  Quick Start |
-| :----: | :---- |
-| English |  [Quick Start](#quick-start) |
-| Chinese |  [快速开始](#快速开始) |
-
 ## Quick Start
 
 1. Install Cloud Monitor by running the command `pip install cloudmonitor`.
