@@ -158,13 +158,16 @@
                 $("#refresh").html("Processing");
                 $.getJSON("./status", function(result){
                     $.each(result, function(i, field){
-                        render_server_data(field);
-                        $("#refresh").addClass("btn-outline-success");
-                        $("#refresh").removeClass("btn-warning");
-                        $("#refresh").removeAttr("disabled");
-                        $("#refresh").html("Refresh (" + TOTAL_COUNT + "S)");
-                        CURRE_COUNT = 0;
+                        try {
+                           render_server_data(field);
+                        }
+                        catch(err) { }
                     });
+                    $("#refresh").addClass("btn-outline-success");
+                    $("#refresh").removeClass("btn-warning");
+                    $("#refresh").removeAttr("disabled");
+                    $("#refresh").html("Refresh (" + TOTAL_COUNT + "S)");
+                    CURRE_COUNT = 0;
                 });
             }
             
