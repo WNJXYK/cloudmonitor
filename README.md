@@ -1,10 +1,11 @@
-# Cloud Monitor
+# Cloud Monitor: 面向学术的服务器监控程序
 
 <p align="center">
     <a href="https://pypi.org/project/cloudmonitor/"><img src="https://badgen.net/pypi/v/cloudmonitor"></a>
-    <a href="#"><img src="https://visitor-badge.glitch.me/badge?page_id=WNJXYK.cloudmonitor"></a>
+    <a href="#"><img src="https://badgen.net/github/stars/WNJXYK/cloudmonitor"></a>
     <a href="https://pepy.tech/project/cloudmonitor"><img src="https://pepy.tech/badge/cloudmonitor"></a>
     <a href="#"><img src="https://img.shields.io/github/last-commit/WNJXYK/cloudmonitor"></a>
+    <!-- <a href="https://coveralls.io/github/WNJXYK/cloudmonitor?branch=master"><img src="https://coveralls.io/repos/github/WNJXYK/cloudmonitor/badge.svg?branch=master"></a> -->
 </p>
 
 ## Navigation
@@ -13,6 +14,11 @@
 | :----: | :---- |
 | English |  [Quick Start](#quick-start) |
 | Chinese |  [快速开始](#快速开始) |
+
+## 更新
+  
+* 🌟 2023/05/24：初始版本发布
+  * 实现了服务器的 GPU、CPU、Memory、Swap 使用情况监控。
 
 ## Quick Start
 
