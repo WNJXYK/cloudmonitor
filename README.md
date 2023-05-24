@@ -40,6 +40,8 @@ servers:
 ```
 3. Start Cloud Monitor by running the command `cloudmonitor -c \home\user\config.yaml`, and you can use the created configuration file to start a server monitoring web service.
 
+Ultimately, the monitoring program will run at "0.0.0.0:port".
+
 ## 快速开始
 
 1. 安装 Cloud Monitor，运行命令 `pip install cloudmonitor`。
@@ -65,3 +67,9 @@ servers:
     port: 21599        # 服务器的端口，缺省为 22
 ```
 3. 启动 Cloud Monitor，运行命令 `cloudmonitor -c \home\user\config.yaml`，即可使用配置文件创建服务器监控网页。
+
+最终，监控程序将运行在 "0.0.0.0:port" 地址。
+
+## Preview
+
+![Preview](https://github.com/WNJXYK/cloudmonitor/blob/master/images/Example.png?raw=true)
